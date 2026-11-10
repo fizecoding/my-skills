@@ -1,9 +1,19 @@
 {
   "name": "my-skills",
-  "version": "0.1.0",
-  "description": "自己写的 pi skills 合集。首个技能：herdr-subagents，herdr 终端复用器下的子代理委派工作流。",
+  "version": "0.2.0",
+  "description": "自己写的 pi skills 合辑：herdr-subagents（herdr 子代理委派工作流）、openspec-grill-proposal（访谈式打磨出完整可实施的 OpenSpec 变更，附 /opsx-proposal 斜杠命令与两个只读 scout 子代理）。",
   "keywords": [
-    "pi-package"
+    "pi-package",
+    "openspec",
+    "grilling",
+    "codegraph"
   ],
-  "license": "ISC"
+  "license": "ISC",
+  "pi": {
+    "skills": ["./skills"],
+    "prompts": ["./prompts"],
+    "subagents": {
+      "agents": ["./agents"]
+    }
+  }
 }
