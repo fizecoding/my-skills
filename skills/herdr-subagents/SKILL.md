@@ -1,11 +1,12 @@
 ---
 name: herdr-subagents
 description: 在 herdr 中把任务委派给独立 coding agent 子代理的工作流：分屏、agent start 启动、prompt 派发、read 回收、并行派工、干预与清理。当主会话需要并行探索/实现/review/测试等委派工作且运行于 herdr 环境（HERDR_ENV=1）时使用。与 herdr 技能（原始面板控制）互补；若需要更全的 herdr 控制细节且 herdr 技能未加载，先运行 herdr --skill。
+compatibility: 需要 herdr 终端复用器（≥0.7.5）与本机 herdr CLI；适用于任何能执行 shell 命令的 Agent Skills 客户端（pi、Claude Code、Codex CLI 等）
 ---
 
 # herdr 子代理工作流
 
-主 pi 会话把工作委派给在 herdr pane 中独立运行的 coding agent（子代理）：一个 pane 一个 agent，经 herdr CLI 派发任务、等待完成、读回结果、用后清理。子代理有自己的完整上下文和工具，与主会话仅通过 prompt 文本和终端输出通信。
+主会话（pi、Claude Code、Codex 等任一 Agent Skills 客户端）把工作委派给在 herdr pane 中独立运行的 coding agent（子代理）：一个 pane 一个 agent，经 herdr CLI 派发任务、等待完成、读回结果、用后清理。子代理有自己的完整上下文和工具，与主会话仅通过 prompt 文本和终端输出通信。
 
 ## 前置条件
 
