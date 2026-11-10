@@ -1,11 +1,11 @@
 # my-skills
 
-自己写的 skills 合辑。每个技能一个子目录，放在 `skills/` 下。
+自己写的 skills 合辑。每个技能一个子目录，放在 `skills/` 下，pi 会从约定目录自动发现并注册为 `/skill:<name>` 命令。
 
 | 技能 | 说明 |
 |---|---|
 | herdr-subagents | herdr 子代理委派工作流：分屏、agent start/prompt/read、并行派工、干预与清理 |
-| openspec-grill-proposal | 访谈式打磨出完整可实施的 OpenSpec 变更（proposal/specs/design/tasks）：双 scout 侦察 → 分轮 grill → 并行评审+起草 → 校验交付；附 `/opsx-proposal` 斜杠命令与 openspec-scout / codegraph-scout 两个只读子代理（pi 专属资源，随包安装） |
+| openspec-grill-proposal | 访谈式打磨出完整可实施的 OpenSpec 变更（proposal/specs/design/tasks）：双 scout 侦察 → 分轮 grill → 并行评审+起草 → 校验交付；依赖 openspec CLI（项目需已初始化 OpenSpec 工作区）；随包附 openspec-scout / codegraph-scout 两个只读子代理（pi 专属） |
 
 ## 跨客户端使用
 
@@ -25,7 +25,7 @@ git clone https://github.com/fizecoding/my-skills
 ln -s "$(pwd)/my-skills/skills/herdr-subagents" ~/.claude/skills/herdr-subagents
 ```
 
-注：`openspec-grill-proposal` 的斜杠命令与子代理声明（`prompts/`、`agents/`）是 pi 包资源，仅随 `pi install` 生效；其他客户端可用其技能本体（SKILL.md 内部按“主会话可派发子代理/不可则自任侦察”执行）。
+注：`openspec-grill-proposal` 依赖 openspec CLI（需已初始化的 OpenSpec 工作区）；其子代理声明（`agents/`）是 pi 包资源，仅随 `pi install` 生效，其他客户端可用其技能本体（SKILL.md 内部按“主会话可派发子代理/不可则自任侦察”执行）。
 
 不想安装也可以在 pi 里临时试一次：
 

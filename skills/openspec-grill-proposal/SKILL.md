@@ -4,12 +4,19 @@ description: >-
   Grill the user through a rigorous interview to produce a COMPLETE, validated
   OpenSpec change — proposal, specs, design, and tasks — ready for apply.
   Use when the user wants to create or refine an OpenSpec change, says
-  "grill this", "打磨/评审 change/proposal", "opsx 访谈", or runs /opsx-proposal.
-  Do NOT trigger for a plain "summarize this" request — the intent must be to
-  create or sharpen a complete OpenSpec change ready for implementation.
+  "grill this", "打磨/评审 change/proposal", "opsx 访谈", or runs
+  /skill:openspec-grill-proposal. Do NOT trigger for a plain "summarize this"
+  request — the intent must be to create or sharpen a complete OpenSpec change
+  ready for implementation.
+compatibility: Requires the openspec CLI (https://openspec.ai) with an
+  initialized OpenSpec workspace in the project; a CodeGraph index is optional
+  (codegraph-scout falls back to grep/read).
 ---
 
 # OpenSpec Grill-Change Workflow
+
+Requires the `openspec` CLI and an initialized OpenSpec workspace
+(`openspec context --json` resolves) in the project.
 
 Produce a COMPLETE OpenSpec change — `proposal.md`, `specs/<cap>/spec.md`,
 `design.md`, `tasks.md` — all validated and ready for `openspec-apply-change`.
