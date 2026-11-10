@@ -4,10 +4,10 @@ description: >-
   Grill the user through a rigorous interview to produce a COMPLETE, validated
   OpenSpec change — proposal, specs, design, and tasks — ready for apply.
   Use when the user wants to create or refine an OpenSpec change, says
-  "grill this", "打磨/评审 change/proposal", "opsx 访谈", or runs
-  /skill:openspec-grill-proposal. Do NOT trigger for a plain "summarize this"
-  request — the intent must be to create or sharpen a complete OpenSpec change
-  ready for implementation.
+  "grill this", "打磨/评审 change/proposal", "opsx 访谈", or explicitly
+  invokes this skill. Do NOT trigger for a plain "summarize this" request —
+  the intent must be to create or sharpen a complete OpenSpec change ready for
+  implementation.
 compatibility: Requires the openspec CLI (https://openspec.ai) with an
   initialized OpenSpec workspace in the project; a CodeGraph index is optional
   (codegraph-scout falls back to grep/read).
@@ -45,7 +45,8 @@ Dispatch both scouts in parallel and wait for both results before grilling:
 - **codegraph-scout** — entry points, call paths, blast radius, reusable
   patterns, risky couplings.
 
-If codegraph-scout reports no index, tell the user and suggest `/codegraph-init`.
+If codegraph-scout reports no index, tell the user and suggest initializing
+the project's CodeGraph index.
 Never run any init yourself. Use the recon findings to eliminate questions you
 could have answered yourself.
 
@@ -100,6 +101,11 @@ Write exactly these sections (from the schema template):
 
 **Immediately after writing proposal.md, launch two tracks in parallel and wait
 for both before proceeding.**
+
+If your client cannot dispatch subagents, run the two tracks sequentially
+yourself: first audit the proposal as a fresh reviewer (re-read only the user's
+stated intent, the recon findings, and proposal.md), then draft the remaining
+artifacts.
 
 ### Track A — Independent proposal review
 Dispatch a fresh-context reviewer to audit the proposal against:

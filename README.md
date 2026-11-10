@@ -25,7 +25,7 @@ git clone https://github.com/fizecoding/my-skills
 ln -s "$(pwd)/my-skills/skills/herdr-subagents" ~/.claude/skills/herdr-subagents
 ```
 
-注：`openspec-grill-proposal` 依赖 openspec CLI（需已初始化的 OpenSpec 工作区）；其子代理声明（`agents/`）是 pi 包资源，仅随 `pi install` 生效，其他客户端可用其技能本体（SKILL.md 内部按“主会话可派发子代理/不可则自任侦察”执行）。
+注：`openspec-grill-proposal` 依赖 openspec CLI（需已初始化的 OpenSpec 工作区）。全流程在无子代理能力的客户端可降级运行（主会话自任侦察/评审/起草）；`agents/` 下的双 scout 与并行轨道是 pi 安装后的增强，仅随 `pi install` 生效。
 
 不想安装也可以在 pi 里临时试一次：
 
