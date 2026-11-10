@@ -1,0 +1,9 @@
+{
+  "name": "my-skills",
+  "version": "0.1.0",
+  "description": "自己写的 pi skills 合集。首个技能：herdr-subagents，herdr 终端复用器下的子代理委派工作流。",
+  "keywords": [
+    "pi-package"
+  ],
+  "license": "ISC"
+}
